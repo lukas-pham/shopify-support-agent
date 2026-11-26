@@ -1,0 +1,17 @@
+# Fill client_id / application_url with `shopify app config link` (not committed for this demo).
+name = "Support Agent"
+client_id = ""
+application_url = "https://example.com"
+embedded = false
+
+[access_scopes]
+# Admin API scopes for STORE_BACKEND=shopify
+scopes = "read_products,read_inventory,read_orders,read_legal_policies"
+
+[app_proxy]
+url = "https://example.com/proxy"
+subpath = "support"
+prefix = "apps"
+
+[webhooks]
+api_version = "2026-10"

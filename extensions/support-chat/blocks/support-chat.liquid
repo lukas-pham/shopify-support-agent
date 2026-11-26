@@ -1,0 +1,30 @@
+<div
+  id="sd-support-chat"
+  data-endpoint="/apps/support/chat"
+  data-shop-name="{{ shop.name | escape }}"
+  data-greeting="{{ block.settings.greeting | escape }}"
+  style="--sd-accent: {{ block.settings.accent_color }};"
+></div>
+{{ 'support-chat.css' | asset_url | stylesheet_tag }}
+<script src="{{ 'support-chat.js' | asset_url }}" defer></script>
+
+{% schema %}
+{
+  "name": "Support chat",
+  "target": "body",
+  "settings": [
+    {
+      "type": "text",
+      "id": "greeting",
+      "label": "Greeting",
+      "default": "Hi! Ask me about products, sizing, shipping or your order."
+    },
+    {
+      "type": "color",
+      "id": "accent_color",
+      "label": "Accent color",
+      "default": "#1f6f5c"
+    }
+  ]
+}
+{% endschema %}
